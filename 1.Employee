@@ -1,0 +1,52 @@
+*/Create a class Employee having the following attributes: id, name, totalSalary, basicSalary, hra, da. 
+Assume suitable data types. Calculate the following attributes based on: hra = 18% of basicSalary, da = 20% of basicSalary. 
+Create a method calculateSalary which will calculate the totalSalary. Display all the details of an Employee in a print method.*/
+
+//Package assi
+
+package assi;
+
+public class assi {
+
+	public static void main(String[] args) {
+		Employee e = new Employee(1,"Shivam Gupta",20000);
+		e.Id=1;
+		e.Name= "Shivam";
+		e.BasicSalary=40000;
+		e.HRA=(0.18f*e.BasicSalary);
+		e.DRA=(0.2f*e.BasicSalary);
+		e.TotalSalary= e.HRA+e.DRA+e.BasicSalary;
+		e.print();
+	}
+}
+
+//Employee Java
+
+package assi;
+
+	public class Employee{
+		int Id;
+		String Name;
+		float TotalSalary;
+		float BasicSalary;
+		float HRA=0;
+		float DRA;
+		
+		public Employee() {
+			System.out.println("Inside the constructor");
+		}
+		public Employee(int i,String n,float basic) {
+			Id =i;
+			Name=n;
+			BasicSalary=basic;
+		}
+		
+		void print() {
+			System.out.println("Id=" +Id+ ",");
+			System.out.println("Name=" +Name+ ",");
+			System.out.println("TotalSalary=" +TotalSalary+ ",");
+			System.out.println("BasicSalary=" +BasicSalary+ ",");
+			System.out.println("HRA=" +HRA+ ",");
+			System.out.println("DRA=" +DRA+ ",");
+		}
+}
