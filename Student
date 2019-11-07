@@ -1,0 +1,61 @@
+  */Create a class Student having the following attributes: id, name, percentage, grade. Assume suitable data types. 
+    Calculate grade of a student based on the following description: 
+
+    • percentage- less than 40, fails.
+    • percentage- between 40 and 60, 2nd Class.
+    • percentage- between 60 and 75, 1st Class.
+    • percentage- between 75 and 100, Distinction Class. /*
+    
+
+package cdac;
+
+import java.util.Scanner;
+
+public class TestStu {
+
+	public static void main(String[] args) {
+		student s =new student();
+		s.Id=1;
+		s.Name="Shivam Gupta";
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter percentage");
+		s.Percentage  = scan.nextInt();	
+		s.grade_calculate();
+		s.print();
+	}
+}
+
+
+package cdac;
+
+public class student {
+	int Id;
+	String Name;
+	float Percentage;
+	char Grade;
+	public student () {
+		System.out.println("Inside the constructor");
+	}
+	public student(int r,String n,float per) {
+		Id = r;
+		Name = n;
+		Percentage = per;
+	}
+	
+	void grade_calculate() {
+		if(Percentage<=40)
+			Grade = 'F';
+		else if(Percentage>=40 && Percentage<=60)
+			Grade = '2';
+		else if(Percentage>=60 && Percentage<=75)
+			Grade = '1';
+		else
+			Grade = 'A';
+	}
+	public void print() {
+		System.out.println("Student Name is "+Name);
+		System.out.println("Student Roll is "+Id);
+		System.out.println("Student Percentage is "+Percentage);
+		System.out.println("Student Grade is "+Grade);
+	}
+}
